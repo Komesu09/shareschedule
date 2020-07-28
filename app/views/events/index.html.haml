@@ -1,6 +1,10 @@
 %p#notice= notice
-%table
 
+%table
+  .wrapper
+    = render "side_bar"
+    #calendar
+  = render "new_event"
 %br/
-<div id="calendar"></div>
-= link_to 'New Event', new_event_path
+
+
