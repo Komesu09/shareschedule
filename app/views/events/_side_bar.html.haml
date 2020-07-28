@@ -1,0 +1,21 @@
+.Side-bar
+  .Item
+    %head
+      .Item__btn
+        .item-title
+          %a{data: {toggle: "collapse"}, href:"#Item-list",role:"button", aria: {expanded:"false"}, aria:{controls:"collapseExample"}}
+            = icon('fas', "bars",class: 'bar')
+    %body
+      #Item-list.collapse
+        .top
+          .icon-list
+            = link_to "#", class: "icons" do
+              = icon('fas', "cog", class: 'edit')
+        %ul.menu
+          %li.menu-items__calendar-name
+            dog
+          %li.menu-items__calendar-name
+            child
+      %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"}
+      %script{:src => "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"}
+
