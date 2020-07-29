@@ -14,7 +14,7 @@
         .menu-bar
           .top
             .icon-list
-              = link_to "#", class: "icons" do
+              = link_to edit_user_path(current_user), class: "icons" do
                 = icon('fas', "cog", class: 'edit')
           %ul.menu
             %li.menu__calendar-name
