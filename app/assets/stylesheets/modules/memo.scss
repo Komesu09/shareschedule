@@ -1,0 +1,41 @@
+.Side-bar {
+  position: absolute;
+  z-index: 5;
+  .Item {
+    .bar {
+      font-size: 50px;
+      margin: 10px;
+    }
+    .navbar-collapse {
+      width: 200px;
+      background-color: #708090;
+      box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
+      .menu-bar {
+        height: 700px;
+        .top {
+          .icon-list {
+            height: 30px;
+            padding: 10px;
+            .edit {
+              color: #ffffff;
+              display: flex;
+              justify-content: flex-end;
+              font-size: 25px;
+            }
+          }
+        }
+        .menu {
+          color: #ffffffff;
+          box-sizing: border-box;
+          padding: 0 20px;
+          overflow: scroll;
+          &__calendar-name {
+            font-size: 15px;
+            padding: 20px;
+            border-bottom: #ffffff 1px solid;
+          }
+        }
+      }
+    }
+  }
+}

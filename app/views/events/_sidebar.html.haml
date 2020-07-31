@@ -1,0 +1,35 @@
+.sidebar
+  %ul.tab
+    %li.slide#User-bar
+      %button.sidebar-toggle#user{onfocus: "this.blur();"}
+        %i.fas.fa-bars.icon#user-icon
+      .contents
+        .contents__box
+          hello
+    %li.slide#My-bar
+      %button.sidebar-toggle#my{onfocus: "this.blur();"}
+        %i.fas.fa-user-alt.icon#my-icon
+      .contents
+        .contents__box
+          job
+        .contents__box
+          private
+    %li.slide#Group-bar
+      %button.sidebar-toggle#group{onfocus: "this.blur();"}
+        %i.fas.fa-user-friends.icon#group-icon
+      .contents
+        .contents__box
+          family
+    %li.slide#Share-bar
+      %button.sidebar-toggle#share{onfocus: "this.blur();"}
+        %i.fas.fa-users.icon#share-icon
+      .contents
+        .contents__box
+          dog
+        .contents__box
+          child
+
+:javascript
+  $("ul li").on("click",function(){
+    $(this).toggleClass("is-closed");
+  });

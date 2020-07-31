@@ -18,4 +18,3 @@
 //= require fullcalendar
 //= require_tree ./modules
 
-

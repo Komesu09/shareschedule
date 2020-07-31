@@ -1,6 +1,24 @@
-.New-event 
-  .New-event__icon
-    = link_to new_event_path,class:"event-icon btn" do
-      %span.fa-stack.fa-3x
-        %i.fas.fa-circle.fa-stack-2x
-        %i.fas.fa-plus.fa-stack-1x.fa-inverse
+
+.New-event
+  .box
+    %button.add-event{onfocus: "this.blur();"}
+      %i.fas.fa-plus.add
+.main
+  .main-cover
+  
+:javascript
+  var toggleBtn = document.querySelector('.add-event');
+  var sidebar = document.querySelector('.New-event');
+  toggleBtn.addEventListener('click', function() {
+    toggleBtn.classList.toggle('btn-closed');
+    sidebar.classList.toggle('btn-closed');
+    if($("#new-overlay")[0]) return false ;
+      $("body").append('<div id="new-overlay"></div>');
+      $("#new-overlay").fadeIn("normal");
+      $("#new-overlay").unbind().click(function(){
+        sidebar.classList.toggle('btn-closed');
+        $("#new-overlay").fadeOut("slow",function(){
+          $("#new-overlay").remove();
+        });
+       });
+  })
