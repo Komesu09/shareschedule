@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_31_034304) do
+ActiveRecord::Schema.define(version: 2020_07_31_060402) do
 
   create_table "calendar_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "calendar_id"
@@ -21,17 +21,17 @@ ActiveRecord::Schema.define(version: 2020_07_31_034304) do
     t.index ["user_id"], name: "index_calendar_users_on_user_id"
   end
 
-  create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "body"
     t.datetime "start_date"
     t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "my_calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -50,6 +50,6 @@ ActiveRecord::Schema.define(version: 2020_07_31_034304) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "calendar_users", "calendars"
+  add_foreign_key "calendar_users", "my_calendars", column: "calendar_id"
   add_foreign_key "calendar_users", "users"
 end

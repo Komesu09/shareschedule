@@ -56,6 +56,11 @@ a:hover {
   font-size: 20px;
   font-family: "Athelas";
   border-bottom: white 1px solid;
+  display: flex;
+  .edit-icon {
+    font-size: 15px;
+    margin-left: 10px;
+  }
   }
 }
 

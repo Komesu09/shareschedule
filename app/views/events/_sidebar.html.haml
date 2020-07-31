@@ -5,38 +5,54 @@
         %i.fas.fa-bars.icon#user-icon
       .contents
         .contents__box
-          hello
+          .calendar-name
+            hello
+          
     %li.slide#My-bar
       %button.sidebar-toggle#my{onfocus: "this.blur();"}
         %i.fas.fa-user-alt.icon#my-icon
       .contents
-        .contents__box
-          job
-        .contents__box
-          private
-        .create-calendar
-          = link_to new_calendar_path, class:"add-calendar" do
-            + カレンダー作成
+        -current_user.calendars.each do |calendar|
+          .contents__box
+            = link_to "#" do
+              .calendar-name
+                = calendar.name
+              .calendar-edit
+                =link_to "#", class:"editlink" do
+                  = icon('fas','pen',class:"edit-icon")
+          .create-calendar
+            = link_to new_calendar_path, class:"add-calendar" do
+              + カレンダー作成
     %li.slide#Group-bar
       %button.sidebar-toggle#group{onfocus: "this.blur();"}
         %i.fas.fa-user-friends.icon#group-icon
       .contents
-        .contents__box
-          family
-        .create-calendar
-          = link_to new_calendar_path, class:"add-calendar" do
-            + カレンダー作成
+        -current_user.calendars.each do |calendar|
+          .contents__box
+            = link_to "#" do
+              .calendar-name
+                = calendar.name
+              .calendar-edit
+                =link_to "#", class:"editlink" do
+                  = icon('fas','pen',class:"edit-icon")
+          .create-calendar
+            = link_to new_calendar_path, class:"add-calendar" do
+              + カレンダー作成
     %li.slide#Share-bar
       %button.sidebar-toggle#share{onfocus: "this.blur();"}
         %i.fas.fa-users.icon#share-icon
       .contents
-        .contents__box
-          dog
-        .contents__box
-          child
-        .create-calendar
-          = link_to new_calendar_path, class:"add-calendar" do
-            + カレンダー作成
+        -current_user.calendars.each do |calendar|
+          .contents__box
+            = link_to "#" do
+              .calendar-name
+                = calendar.name
+              .calendar-edit
+                =link_to "#", class:"editlink" do
+                  = icon('fas','pen',class:"edit-icon")
+          .create-calendar
+            = link_to new_calendar_path, class:"add-calendar" do
+              + カレンダー作成
 
 :javascript
   $("ul li").on("click",function(){
