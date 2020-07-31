@@ -3,8 +3,16 @@
   .box
     %button.add-event{onfocus: "this.blur();"}
       %i.fas.fa-plus.add
+  .new-contents
+    コンテンツ
+    .close-btn
+      close
 .main
   .main-cover
+
+.New-event
+  .add-event
+  .
   
 :javascript
   var toggleBtn = document.querySelector('.add-event');
@@ -22,3 +30,35 @@
         });
        });
   })
+
+
+  $(function(){
+  var modalBtn = $('.add-event');
+  var modalBtnClose = $('.close-btn');
+  var modalBtnCloseFix = $('.js-modal__btn--close--fix');
+  var modalBg = $('.js-modal__bg');
+  var modalMain = $('.js-modal__main');
+  modalBtn.on('click', function (e) {
+    $(this).next(modalBg).fadeIn();
+    $(this).next(modalBg).next(modalMain).removeClass("_slideDown");
+    $(this).next(modalBg).next(modalMain).addClass("_slideUp");
+  });
+  modalBtnClose.on('click', function (e) {
+    modalBg.fadeOut();
+    modalMain.removeClass("_slideUp");
+    modalMain.addClass("_slideDown");
+  });
+  modalBtnCloseFix.on('click', function (e) {
+    modalBg.fadeOut();
+    modalMain.removeClass("_slideUp");
+    modalMain.addClass("_slideDown");
+  });
+  modalMain.on('click', function (e) {
+    e.stopPropagation();
+  });
+  modalBg.on('click', function () {
+    $(this).fadeOut();
+    $(this).next(modalMain).removeClass("_slideUp");
+    $(this).next(modalMain).addClass("_slideDown");
+  });
+});

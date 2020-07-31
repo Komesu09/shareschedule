@@ -5,7 +5,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  border: #92999F 0.5px solid;
+  
+  
 }
 
 .fc-sun, .fc-sat {
@@ -16,14 +17,17 @@ background-color: #f5f5f5;
   .fc-day-header {
     display: table-cell;
     vertical-align: middle;
-
+    font-family: 'Baskerville';
   }
 }
 .fc-today {
 background-color: #fffccc ;
 }
-.fs-toolbar {
-padding-bottom: 0;
+
+.fc-toolbar.fc-header-toolbar {
+  border: #ddd 1px solid;
+  padding-bottom: 13px;
+  margin: 0 !important;
 }
 .fc-right .fc-button {
 background-color: #262626;
@@ -35,6 +39,12 @@ border: 0;
 display : none;
 }
 .fc-left {
-font-size: 30px;
+font-size: 40px;
 margin: 20px 0 0 10px;
+font-family:'Kaushan Script', cursive;
+}
+
+.fc-day-number {
+  font-family: 'Baskerville';
+  font-size: 18px;
 }

@@ -4,17 +4,16 @@
 .add-event {
   background-color: black;
   position: fixed;
-  margin: -8.5em -8.5em 0 0;
-  right: 0;
-  width: 16em;
-  height: 16em;
+  bottom: 0;
+  width: 5em;
+  height: 5em;
   border: none;
   cursor: pointer;
   border-radius: 90px;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
   .add {
     color: white;
-    margin: 1.8em 1.5em 0 0;
-    font-size: 4em;
+    font-size: 2em;
   }
   &.btn-closed {
     transform: translateX(.3em) rotate(0deg);  
@@ -22,14 +21,14 @@
 }
 
 .New-event {
-  margin-right: -20em;
+  margin-bottom: -100% ;
   width: 20em;
-  height: 100vh;
+  height: 20em;
   transition: .7s;
   background-color: black;
   z-index: 3;
   &.btn-closed {
-    transform: translateX(-15em);
+    transform: translateY(-15em);
   }
 }
 
@@ -58,3 +57,38 @@
 	height:120%;
 	background-color:rgba(0,0,0,0.25);
 }
+
+.close-btn {
+  margin-top: 40px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+@keyframes SlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-1%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-80%);
+  }
+}
+
+@keyframes SlideDown {
+  0% {
+    opacity: 1;
+    transform: translateY(-80%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-1%);
+  }
+}
+
+.js-modal__main._slideUp {
+  animation: SlideUp .5s ease-in-out forwards;
+  }
+  .js-modal__main._slideDown {
+  animation: SlideDown .5s ease-in-out forwards;
+  }

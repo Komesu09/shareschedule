@@ -14,12 +14,18 @@
           job
         .contents__box
           private
+        .create-calendar
+          = link_to new_calendar_path, class:"add-calendar" do
+            + カレンダー作成
     %li.slide#Group-bar
       %button.sidebar-toggle#group{onfocus: "this.blur();"}
         %i.fas.fa-user-friends.icon#group-icon
       .contents
         .contents__box
           family
+        .create-calendar
+          = link_to new_calendar_path, class:"add-calendar" do
+            + カレンダー作成
     %li.slide#Share-bar
       %button.sidebar-toggle#share{onfocus: "this.blur();"}
         %i.fas.fa-users.icon#share-icon
@@ -28,6 +34,9 @@
           dog
         .contents__box
           child
+        .create-calendar
+          = link_to new_calendar_path, class:"add-calendar" do
+            + カレンダー作成
 
 :javascript
   $("ul li").on("click",function(){

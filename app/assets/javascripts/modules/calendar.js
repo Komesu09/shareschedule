@@ -75,7 +75,8 @@ $(function () {
                 },
               events: '/events.json',
               //カレンダー上部を年月で表示させる
-              titleFormat: 'M YYYY',
+              monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+              titleFormat: 'MMMM.YYYY',
               //曜日を日本語表示
               dayNamesShort: ['SUN', 'MON', 'TUE', 'WED', 'THR', 'FRI', 'SAT'],
               //ボタンのレイアウト
