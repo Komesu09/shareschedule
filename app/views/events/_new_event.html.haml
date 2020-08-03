@@ -1,6 +1,64 @@
-.New-event 
-  .New-event__icon
-    = link_to new_event_path,class:"event-icon btn" do
-      %span.fa-stack.fa-3x
-        %i.fas.fa-circle.fa-stack-2x
-        %i.fas.fa-plus.fa-stack-1x.fa-inverse
+
+.New-event
+  .box
+    %button.add-event{onfocus: "this.blur();"}
+      %i.fas.fa-plus.add
+  .new-contents
+    コンテンツ
+    .close-btn
+      close
+.main
+  .main-cover
+
+.New-event
+  .add-event
+  .
+  
+:javascript
+  var toggleBtn = document.querySelector('.add-event');
+  var sidebar = document.querySelector('.New-event');
+  toggleBtn.addEventListener('click', function() {
+    toggleBtn.classList.toggle('btn-closed');
+    sidebar.classList.toggle('btn-closed');
+    if($("#new-overlay")[0]) return false ;
+      $("body").append('<div id="new-overlay"></div>');
+      $("#new-overlay").fadeIn("normal");
+      $("#new-overlay").unbind().click(function(){
+        sidebar.classList.toggle('btn-closed');
+        $("#new-overlay").fadeOut("slow",function(){
+          $("#new-overlay").remove();
+        });
+       });
+  })
+
+
+  $(function(){
+  var modalBtn = $('.add-event');
+  var modalBtnClose = $('.close-btn');
+  var modalBtnCloseFix = $('.js-modal__btn--close--fix');
+  var modalBg = $('.js-modal__bg');
+  var modalMain = $('.js-modal__main');
+  modalBtn.on('click', function (e) {
+    $(this).next(modalBg).fadeIn();
+    $(this).next(modalBg).next(modalMain).removeClass("_slideDown");
+    $(this).next(modalBg).next(modalMain).addClass("_slideUp");
+  });
+  modalBtnClose.on('click', function (e) {
+    modalBg.fadeOut();
+    modalMain.removeClass("_slideUp");
+    modalMain.addClass("_slideDown");
+  });
+  modalBtnCloseFix.on('click', function (e) {
+    modalBg.fadeOut();
+    modalMain.removeClass("_slideUp");
+    modalMain.addClass("_slideDown");
+  });
+  modalMain.on('click', function (e) {
+    e.stopPropagation();
+  });
+  modalBg.on('click', function () {
+    $(this).fadeOut();
+    $(this).next(modalMain).removeClass("_slideUp");
+    $(this).next(modalMain).addClass("_slideDown");
+  });
+});

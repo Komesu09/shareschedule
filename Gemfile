@@ -69,3 +69,4 @@ gem 'font-awesome-sass'
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
 gem 'rails-i18n'
+gem "pry-rails"

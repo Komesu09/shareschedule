@@ -1,93 +1,13 @@
 * {
   box-sizing: border-box;
 }
-
+ @import "events/calendar";
+ @import "events/dialog";
+ @import "events/new_event";
+ 
 .wrapper {
   display: flex;
-  .Side-bar {
-    position: absolute;
-    z-index: 5;
-    .Item {
-      .bar {
-        font-size: 50px;
-        margin: 10px;
-      }
-      .navbar-collapse {
-        width: 200px;
-        background-color: #708090;
-        box-shadow: 0 10px 25px 0 rgba(0, 0, 0, .5);
-        .menu-bar {
-          height: 700px;
-          .top {
-            .icon-list {
-              height: 30px;
-              padding: 10px;
-              .edit {
-                color: #ffffff;
-                display: flex;
-                justify-content: flex-end;
-                font-size: 25px;
-              }
-            }
-          }
-          .menu {
-            color: #ffffffff;
-            box-sizing: border-box;
-            padding: 0 20px;
-            overflow: scroll;
-            &__calendar-name {
-              font-size: 15px;
-              padding: 20px;
-              border-bottom: #ffffff 1px solid;
-            }
-          }
-        }
-      }
-    }
-  }
-
-
-  #calendar {
-    width: 900px;
-    margin: 20px auto;
-    align-items: center;
-    overflow: scroll;
-
-
-  }
-}
-.fc-sun, .fc-sat {
-  background-color: #f5f5f5;
-}
-.fc-today {
-  background-color: #fffccc !important;
-}
-.fc-right .fc-prev-button, .fc-right .fc-next-button {
-  background-color: #262626;
-  color: white;
-  background-image: none;
-  border: none;
-}
-.fc-time{
-  display : none;
-}
-.fc-center {
-  font-size: 20px;
-  font-family: "Noto Sans JP";
-}
-
-.New-event {
-  &__icon {
-    position: relative;
-    
-    .event-icon {
-      position: absolute;
-      right: 120px;
-      bottom: 50px;
-      z-index: 3;
-      position: fixed;
-    }
-  }
+  z-index: 3;
 }
 .btn:hover{
   text-decoration: none;
@@ -97,3 +17,91 @@ a:hover {
   color: #666;
   background-color: white;
 }
+
+.sidebar-toggle {
+  position: fixed;
+  width: 4em;
+  height: 60px;
+  border: none;
+  margin-left:20em;
+  cursor: pointer;
+  transition: .5s;
+  padding-left: 5px;
+  border-radius: 0 25px 0 0;
+  &.is-closed {
+    transform: translateX(.3em) rotate(0deg);  
+  }
+  
+  .icon {
+    font-size: 1.5rem;
+    color: white;
+  }
+}
+.slide {
+  margin-left: -20em;
+  width: 20em;
+  height: 100vh;
+  transition: .7s;
+  position: absolute;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .3);
+  box-sizing: border-box;
+  &.is-closed {
+    transform: translateX(15em);
+  }
+}
+
+.contents{
+  &__box {
+  padding: 1em 5em ;
+  font-size: 20px;
+  font-family: "Athelas";
+  border-bottom: white 1px solid;
+  display: flex;
+  .edit-icon {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  }
+}
+
+#user{
+  background-color: #13334c;
+}
+#User-bar {
+  background-color: #13334c;
+  z-index: 10;
+}
+
+#my{
+  background-color: #005792;
+}
+
+#My-bar {
+  background-color: #005792;
+  z-index: 9;
+  margin-top: 63px;
+}
+
+#Group-bar {
+  background-color: #f6f6e9;
+  z-index: 8;
+  margin-top: 128px;
+}
+
+#group {
+  background-color: #f6f6e9;
+}
+
+#group-icon {
+  color: #13334c;
+}
+#Share-bar {
+  background-color: #fd5f00;
+  z-index: 7;
+  margin-top: 193px;
+}
+
+#share {
+  background-color: #fd5f00;
+}
+

@@ -1,0 +1,50 @@
+#calendar {
+  width: 800px;
+  margin: 20px auto;
+  overflow: scroll;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  
+}
+
+.fc-sun, .fc-sat {
+background-color: #f5f5f5;
+}
+.fc-widget-header {
+  height: 30px;
+  .fc-day-header {
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Baskerville';
+  }
+}
+.fc-today {
+background-color: #fffccc ;
+}
+
+.fc-toolbar.fc-header-toolbar {
+  border: #ddd 1px solid;
+  padding-bottom: 13px;
+  margin: 0 !important;
+}
+.fc-right .fc-button {
+background-color: #262626;
+color: white;
+background-image: none;
+border: 0;
+}
+.fc-time{
+display : none;
+}
+.fc-left {
+font-size: 40px;
+margin: 20px 0 0 10px;
+font-family:'Kaushan Script', cursive;
+}
+
+.fc-day-number {
+  font-family: 'Baskerville';
+  font-size: 18px;
+}
