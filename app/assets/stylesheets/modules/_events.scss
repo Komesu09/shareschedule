@@ -28,6 +28,7 @@ a:hover {
   transition: .5s;
   padding-left: 5px;
   border-radius: 0 25px 0 0;
+  margin-top: 0em;
   &.is-closed {
     transform: translateX(.3em) rotate(0deg);  
   }
@@ -57,51 +58,45 @@ a:hover {
   font-family: "Athelas";
   border-bottom: white 1px solid;
   display: flex;
-  .edit-icon {
-    font-size: 15px;
-    margin-left: 10px;
-  }
+    .calendar-name {
+      color: white;
+    }
+    .edit-icon {
+      font-size: 15px;
+      margin-left: 5px;
+      color: white;
+    }
+    .add-calendar {
+      color: gainsboro;
+    }
   }
 }
 
 #user{
-  background-color: #13334c;
+  background-color: #31315c;
 }
 #User-bar {
-  background-color: #13334c;
+  background-color: #31315c;
   z-index: 10;
 }
 
 #my{
-  background-color: #005792;
+  background-color: #930056;
 }
 
 #My-bar {
-  background-color: #005792;
+  background-color: #930056;
   z-index: 9;
   margin-top: 63px;
 }
 
-#Group-bar {
-  background-color: #f6f6e9;
-  z-index: 8;
+#Share-bar {
+  background-color: #d2b62e;
+  z-index: 7;
   margin-top: 128px;
 }
 
-#group {
-  background-color: #f6f6e9;
-}
-
-#group-icon {
-  color: #13334c;
-}
-#Share-bar {
-  background-color: #fd5f00;
-  z-index: 7;
-  margin-top: 193px;
-}
-
 #share {
-  background-color: #fd5f00;
+  background-color: #d2b62e;
 }
 
