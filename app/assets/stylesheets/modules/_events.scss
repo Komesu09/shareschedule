@@ -53,22 +53,28 @@ a:hover {
 
 .contents{
   &__box {
-  padding: 1em 5em ;
-  font-size: 20px;
-  font-family: "Athelas";
-  border-bottom: white 1px solid;
-  display: flex;
-    .calendar-name {
-      color: white;
-    }
-    .edit-icon {
-      font-size: 15px;
-      margin-left: 5px;
-      color: white;
-    }
+    padding: 1em 5em ;
+    font-size: 17px;
+    font-family: "Athelas";
+    border-bottom: white 1px solid;
+    display: flex;
+      .calendar-name {
+        padding-top: 0.5em;
+        color: white;
+      }
+      .edit-icon {
+        font-size: 13px;
+        margin-left: 5px;
+        color: white;
+      }
+  }
+  .create-calendar {
     .add-calendar {
-      color: gainsboro;
+      padding-left: 6.5em;
+      position: absolute;
+      color: ghostwhite;
     }
+    
   }
 }
 
@@ -98,5 +104,10 @@ a:hover {
 
 #share {
   background-color: #d2b62e;
+}
+
+.add-calendar {
+  color: darkgray;
+  padding: 1em 5em;
 }
 
