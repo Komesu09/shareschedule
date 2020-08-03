@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
-  def edit
+  def index
     
+  end
+  
+  def edit
   end
 
   def update
@@ -9,7 +12,7 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
+
   private
 
   def user_params
