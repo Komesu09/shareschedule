@@ -82,7 +82,6 @@ $(function () {
               //ボタンのレイアウト
               header: {
                   left: 'title',
-                  center: '',
                   right: 'today prev,next'
               },
               defaultView: 'month',

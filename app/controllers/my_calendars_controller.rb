@@ -1,8 +1,9 @@
 class MyCalendarsController < ApplicationController
 
   def index
-       
+    @my_calendar = MyCalendar.all
   end
+
   def new
     @my_calendar = MyCalendar.new
     @my_calendar.users << current_user

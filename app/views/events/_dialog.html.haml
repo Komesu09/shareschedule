@@ -2,8 +2,8 @@
   .dialog-content
     = form_with(model: @event, local: true) do |form|
       .field
-        = form.label :title, 'タイトル'
-        = form.text_field :title
+        = form.label :title
+        = form.text_field :title, placeholder: "タイトルを追加", autofocus: true
       .field
         = form.label :body
         = form.text_field :body
