@@ -58,21 +58,47 @@ $(function () {
                 });
             },
             
-            eventClick: function(event) {
+            eventClick: function(date, allDay, jsEvent, view) {
 
-                //console.dir(event); オブジェクトの中身をチェック。
+              $(this).blur() ;	//ボタンからフォーカスを外す
+                if($("#modal-overlay")[0]) return false ;
                 
-              var title = prompt('予定を更新してください:');
+                $("body").append('<div id="modal-overlay"></div>');
+      
+                $("#modal-overlay").fadeIn("normal");
+                $("#event-dialog").fadeIn("normal");
+                function centeringModalSyncer(){
+
+                    //画面(ウィンドウ)の幅を取得し、変数[w]に格納
+                    var w = $(window).width();
                 
-                if(title && title!=""){
-                  event.title = title;
-                //イベント（予定）の修正
-                $('#calendar').fullCalendar('updateEvent', event);
-                  }else{
-                //イベント（予定）の削除  idを指定して削除。
-                $('#calendar').fullCalendar("removeEvents", event.id);
+                    //画面(ウィンドウ)の高さを取得し、変数[h]に格納
+                    var h = $(window).height();
+                
+                    //コンテンツ(#modal-content)の幅を取得し、変数[cw]に格納
+                    var cw = $("#event-dialog").outerWidth({margin:true});
+                
+                    //コンテンツ(#modal-content)の高さを取得し、変数[ch]に格納
+                    var ch = $("#event-dialog").outerHeight({margin:true});
+                
+                    //コンテンツ(#modal-content)を真ん中に配置するのに、左端から何ピクセル離せばいいか？を計算して、変数[pxleft]に格納
+                    var dialogleft = ((w - cw)/2);
+                
+                    //コンテンツ(#modal-content)を真ん中に配置するのに、上部から何ピクセル離せばいいか？を計算して、変数[pxtop]に格納
+                    var dialogright = ((h - ch)/2);
+                
+                    //[#modal-content]のCSSに[left]の値(pxleft)を設定
+                    $("#event-dialog").css({"left": pxleft + "px"});
+                
+                    //[#modal-content]のCSSに[top]の値(pxtop)を設定
+                    $("#event-dialog").css({"top": pxtop + "px"});
                 }
-                },
+                $("#modal-overlay,#dialog-close").unbind().click(function(){
+                    $("#event-dialog,#modal-overlay").fadeOut("slow",function(){
+                      $("#modal-overlay").remove();
+                    });
+                });
+            },
               events: '/events.json',
               //カレンダー上部を年月で表示させる
               monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -98,7 +124,6 @@ $(function () {
                   day: '日'
               },
               // Drag & Drop & Resize
-              editable: true,
               //イベントの時間表示を２４時間に
               timeFormat: "HH:mm",
               //イベントの色を変える
