@@ -1,7 +1,7 @@
 class MyCalendarsController < ApplicationController
 
   def index
-    @my_calendar = MyCalendar.all
+    
   end
 
   def new
