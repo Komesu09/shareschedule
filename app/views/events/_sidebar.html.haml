@@ -21,7 +21,7 @@
               .calendar-name
                 = my_calendar.name
               .calendar-edit
-                =link_to "#", class:"editlink" do
+                =link_to edit, class:"editlink" do
                   = icon('fas','pen',class:"edit-icon")
         .create-calendar
           = link_to new_my_calendar_path, class:"add-calendar" do
